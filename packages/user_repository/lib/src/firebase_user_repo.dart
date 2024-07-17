@@ -12,16 +12,8 @@ class FirebaseUserRepo implements UserRepository {
   }) : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance;
 
   @override
-  Future<void> logOut() {
-    // TODO: implement logOut
-    throw UnimplementedError();
-  }
-
-  @override
-  Future<void> setUserData(MyUser user) {
-    // TODO: implement setUserData
-    throw UnimplementedError();
-  }
+  // TODO: implement user
+  Stream<MyUser?> get user => throw UnimplementedError();
 
   @override
   Future<void> signIn(String email, String password) {
@@ -36,6 +28,14 @@ class FirebaseUserRepo implements UserRepository {
   }
 
   @override
-  // TODO: implement user
-  Stream<MyUser?> get user => throw UnimplementedError();
+  Future<void> logOut() {
+    // TODO: implement logOut
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<void> setUserData(MyUser user) {
+    // TODO: implement setUserData
+    throw UnimplementedError();
+  }
 }
