@@ -7,6 +7,7 @@ class MyAppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Pizza Delivery',
+      debugShowCheckedModeBanner: false,
     );
   }
 }
