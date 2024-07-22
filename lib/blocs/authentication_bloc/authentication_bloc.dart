@@ -24,7 +24,7 @@ class AuthenticationBloc
       if (event.user != MyUser.empty) {
         emit(AuthenticationState.authenticated(event.user!));
       } else {
-        emit(const AuthenticationState.unauthenticated();)
+        emit(const AuthenticationState.unauthenticated());
       }
     });
   }
