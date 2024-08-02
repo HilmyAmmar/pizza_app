@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
@@ -35,17 +34,16 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               child: Container(
                 height: MediaQuery.of(context).size.height * 0.6,
                 width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.1),
                 decoration: const BoxDecoration(
                   color: Color(0xff1B033D),
                 ),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Column(
                       children: [
                         const Text(
-                          "Hello!",
+                          "Welcome",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 50,
@@ -53,23 +51,53 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        Expanded(
-                          child: Padding(
-                            padding:
-                                EdgeInsets.symmetric(horizontal: width * 0.1),
-                            child: const Text(
-                              "Welcome to the ultimate gaming experience! Play the games and connect with people around the world with Ubisoft Connect",
-                              textAlign: TextAlign.center,
+                        Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: width * 0.15),
+                          child: const Text(
+                            "Play the games and connect with people around the world with Ubisoft Connect",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        SizedBox(
+                          width: width * 0.6,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              foregroundColor: Colors.black,
+                              backgroundColor: const Color(0xfff2f0f3),
+                            ),
+                            child: const Text("Get Started"),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text(
+                              "Already have an account ?",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 15,
                                 fontWeight: FontWeight.normal,
                               ),
                             ),
-                          ),
-                        ),
+                            TextButton(
+                              onPressed: () {},
+                              child: const Text("Login here"),
+                            ),
+                          ],
+                        )
                       ],
-                    ),
+                    )
                   ],
                 ),
               ),
