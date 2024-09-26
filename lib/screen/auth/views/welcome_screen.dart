@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:pizza_app/blocs/authentication_bloc/authentication_bloc.dart';
+import 'package:pizza_app/screen/auth/blocs/sign_in_bloc/sign_in_bloc.dart';
+import 'package:pizza_app/screen/auth/views/sign_in.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -91,7 +95,18 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                               ),
                             ),
                             TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => BlocProvider(
+                                        create: (context) => SignInBloc(context
+                                            .read<AuthenticationBloc>()
+                                            .userRepository),
+                                        child: const SignInScreen(),
+                                      ),
+                                    ));
+                              },
                               child: const Text("Login here"),
                             ),
                           ],
