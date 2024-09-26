@@ -68,6 +68,19 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             ),
                           ),
                         ),
+                        Padding(
+                          padding:
+                              EdgeInsets.symmetric(horizontal: width * 0.15),
+                          child: const Text(
+                            "Play the games and connect with people around the world with Ubisoft Connect",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                     Column(
